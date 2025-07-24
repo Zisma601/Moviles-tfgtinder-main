@@ -1,0 +1,221 @@
+/* Contenedor principal (ion-content) */
+.custom-scroll {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: white;
+}
+
+/* Contenedor desplazable */
+.scrollable-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-top: calc(31px + 38px + 16px); /* Ajusta la altura del header */
+  padding-bottom: 120px; /* Espacio para el footer */
+  box-sizing: border-box;
+}
+
+/* Header */
+.title-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  background-color: white;
+  height: calc(31px + 38px + 16px); /* Asegura una altura consistente */
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+ 
+}
+
+.page-title {
+  font-size: 38px;
+  font-weight: 550;
+  color: black;
+  margin: 0;
+  position: absolute;
+  font-family: 'Inter', sans-serif;
+  left: 31px;
+  top: 31px;
+}
+
+/* Contenedor de imágenes */
+.image-container {
+  width: 100%;
+  position: relative;
+  max-width: 383px;
+  height: 602px; /* Ajusta según sea necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+  margin-top: 16px;
+  background-color: #f8f8f8;
+  margin: 16px auto;
+}
+
+.overlay-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 16px;
+  background-color: #f0f0f0;
+}
+
+.image-overlay-text {
+  position: absolute;
+  bottom: 40px;
+  left: 16px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Cartas */
+.card {
+  margin-top: 70px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 400px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.tfg-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  margin-top: 16px;
+  padding-bottom: 120px;
+
+}
+
+.tfg-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background: rgba(217, 217, 217, 0.3);
+  max-width: 372px;
+  min-width: 372px;
+  margin-bottom: 16px;
+  overflow-wrap: break-word;
+}
+
+/* Títulos y subtítulos de las tarjetas */
+.tfg-card ion-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #484648;
+  font-family: 'Inter', sans-serif;
+  word-wrap: break-word;
+  text-align: justify;
+}
+
+.tfg-card ion-card-subtitle {
+  font-size: 14px;
+  color: #828693;
+  font-family: 'Inter', sans-serif;
+  font-weight: 550;
+  text-align: justify;
+  margin-bottom: 8px;
+  white-space: normal;
+}
+.tfg-card ion-card-header {
+  position: relative;
+  padding-right: 60px; /* Deja espacio para el botón de corazón */
+}
+/* Footer */
+.icon-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 105px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.icon-container .icon {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.icon1 {
+  width: 22.57px;
+  height: 26.87px;
+  margin-right: 50px;
+}
+
+.icon2 {
+  width: 30.9px;
+  height: 26.84px;
+  margin: 0 50px;
+}
+
+.icon3 {
+  width: 19.46px;
+  height: 26.03px;
+  margin-left: 50px;
+}
+
+.icon-container .icon:hover {
+  transform: scale(1.2);
+}
+
+/* Botón de corazón */
+/* Botón de corazón */
+.corazon-button {
+  position: absolute; /* Posición absoluta para colocarlo sobre la tarjeta */
+  top: 16px; /* Separación del borde superior de la tarjeta */
+  right: 16px; /* Separación del borde derecho de la tarjeta */
+  z-index: 10; /* Asegura que esté por encima del contenido */
+  background: transparent; /* Fondo transparente para evitar conflictos visuales */
+  padding: 0; /* Sin padding adicional */
+}
+
+.corazon-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain; /* Ajusta la imagen del ícono */
+}
+.no-tfg-message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 18px;
+  color: #484848;
+  font-family: 'Inter', sans-serif;
+  padding: 0 16px;
+}
+/* Mensaje de TFG asignado */
+.tfg-asignado-message {
+  font-size: 20px;
+  font-weight: bold;
+  color: #484648;
+  font-family: 'Inter', sans-serif;
+  margin-top: 16px;
+  align-items: center;
+  align-self: center;
+  text-align: center ;
+  margin-top: 360px;
+}
+

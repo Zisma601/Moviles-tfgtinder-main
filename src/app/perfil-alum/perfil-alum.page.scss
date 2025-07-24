@@ -1,0 +1,211 @@
+/* Contenedor principal (ion-content) */
+ion-content {
+    position: relative; /* Define un contexto para elementos absolutos */
+}
+/* Título con posición específica */
+.page-title {
+    position: absolute; /* Se posiciona relativo a ion-content */
+    top: 31px; /* Coordenada Y */
+    left: 31px; /* Coordenada X */
+    font-size: 38px;
+    font-weight: 550; /* Cambiado a semi bold válido en CSS */
+    color: black;
+    margin: 0; /* Elimina cualquier margen por defecto */
+    font-family: 'Inter', sans-serif;
+}
+ /* Contenedor de TFG */
+ .tfg-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative; /* Necesario para que la imagen se posicione relativo al contenedor */
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    margin-top: 470px; /* Espaciado desde la parte superior */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding y borde */
+  }
+  
+  /* Tarjeta de TFG (Sin sombra ni bordes redondeados) */
+  .tfg-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background: rgba(217, 217, 217, 0.3); /* Fondo con opacidad */
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+    border: none; /* Sin borde */
+    max-width: 372px;
+    min-width: 372px;
+    padding-right: 70px;
+  }
+  
+  /* Título de la tarjeta */
+  .tfg-card ion-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #484648;
+    font-family: 'Inter', sans-serif;
+    word-wrap: break-word;
+    text-align: justify;
+  }
+  
+  /* Subtítulo de la tarjeta */
+  .tfg-card ion-card-subtitle {
+    font-size: 14px;
+    color: #828693;
+    font-family: 'Inter', sans-serif;
+    font-weight: 550;
+    max-width: 100%;
+    text-align: justify;
+    word-wrap: break-word;
+  }
+  
+.rating-box {
+    position: absolute;
+    top:35px; /* Ajusta la posición en la tarjeta */
+    right: 16px; /* Posición del cuadrado */
+    width: 60px; /* Dimensiones del cuadrado */
+    height: 60px;
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    background-color: #D9D9D9; /* Color de fondo */
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #484648; /* Color del texto */
+}
+/* Contenedor de íconos fijo en la parte inferior */
+.icon-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 105px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+/* Estilo de cada ícono */
+.icon-container .icon {
+    display: block;
+    cursor: pointer;
+}
+.icon1 {
+    width: 22.57px;
+    height: 26.87px;
+    margin-right: 50px;
+}
+.icon2 {
+    width: 30.9px;
+    height: 26.84px;
+    margin: 0 50px;
+}
+.icon3 {
+    width: 19.46px;
+    height: 26.03px;
+    margin-left: 50px;
+}
+/* Contenedor de perfil */
+.profile-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+/* Imagen de perfil */
+.profile-img {
+    width: 181.38px;
+    height: 181.38px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute; /* Permite usar coordenadas absolutas */
+    top: 188px; /* Posición vertical deseada */
+    left: 50%; /* Centrado horizontalmente respecto al contenedor */
+    transform: translateX(-50%); /* Ajuste para centrar perfectamente */
+}
+/* Botón de edición */
+.edit-button {
+    position: absolute; /* Posiciona el botón relativo al contenedor padre */
+    top: 309px; /* Coordenada Y deseada */
+    left: 230px; /* Coordenada X deseada */
+    width: 68.86px;
+    height: 68.86px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+/* Nombre del usuario */
+.user-name {
+    position: absolute; /* Permite usar coordenadas específicas */
+    top: 396px; /* Posición vertical deseada */
+    left: 50%; /* Centrado horizontalmente en el contenedor */
+    transform: translateX(-50%); /* Centra perfectamente horizontalmente */
+    text-align: center;
+    font-size: 39px;
+    font-family: 'Inter', sans-serif;
+    
+    margin: 0; /* Elimina márgenes adicionales */
+    color: #484648; /* Color de texto existente */
+}
+/* Edad del usuario */
+.user-age {
+    font-size: 25px;
+    color: 484648;
+    font-weight: normal;
+}
+/* Barra de estado */
+
+.tfg-title {
+    text-align: center;
+    font-size: 34px;
+    font-family: 'Inter', sans-serif;
+    margin-top: 16px;
+    color: #484648;
+    position: absolute;
+    top: 450px;
+    transform: translateX(-50%);
+    text-align: center;
+    left: 50%;
+}
+.status-bar {
+    background: linear-gradient(to right, #EE805F, #EA4080);
+    height: 10px;
+    margin: 8px auto;
+    border-radius: 5px;
+    display: block;
+    transition: width 0.3s ease-in-out;
+    visibility: visible; /* Asegúrate de que no esté oculto */
+  }
+  
+  
+  /* Texto debajo de la barra de estado */
+  .status-text {
+    position: relative; /* Relativo al flujo de documentos */
+    text-align: center; /* Centrado horizontal */
+    font-size: 14px; /* Tamaño de fuente */
+    font-family: 'Inter', sans-serif; /* Fuente personalizada */
+    font-weight: bold; /* Negrita */
+    color: #828693; /* Color del texto */
+    margin-top: 4px; /* Espaciado respecto a la barra */
+  }
+  .error {
+    font-size: 20px;
+    font-weight: bold;
+    color: #484648;
+    font-family: 'Inter', sans-serif;
+    margin-top: 16px;
+    align-items: center;
+    align-self: center;
+    text-align: center ;
+    margin-top: 535px;
+}

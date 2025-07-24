@@ -1,0 +1,60 @@
+<ion-content class="ion-padding" id="content">
+  <h1 class="page-title">Mensajes</h1>
+
+  <!-- Filtro de estado de TFG -->
+  <div class="filter-container">
+    <ion-button expand="block" class="filter-button" id="filterButton" (click)="toggleDropdown()">
+      Filtrar estado TFG
+      <img src="assets/filter-icon.png" alt="Filter Icon" class="icon-inside-button" id="filterIcon" />
+    </ion-button>
+    <ul class="dropdown" id="dropdownMenu" [class.show]="isDropdownVisible">
+      <li class="dropdown-item" (click)="onFilterSelect('Todos')">Todos</li>
+      <li class="dropdown-item" (click)="onFilterSelect('En curso')">En curso</li>
+      <li class="dropdown-item" (click)="onFilterSelect('Evaluado')">Evaluado</li>
+      <li class="dropdown-item" (click)="onFilterSelect('Terminado')">Terminado</li>
+    </ul>
+  </div>
+
+  <!-- Lista de estudiantes -->
+  <div class="scroll-container">
+  <div *ngIf="estudiantes.length > 0; else loading"> 
+    <div *ngFor="let estudiante of estudiantes" class="student-card" (click)="navigateToChat(estudiante)">
+      <div class="student-left">
+        <img src="assets/sample-image1.png" alt="Imagen de perfil" class="profile-picture" />
+        <p class="student-name"><strong></strong> {{ estudiante.nombre }}</p> <!-- Mostrar siempre el nombre del estudiante -->
+      </div>
+  
+      <div class="student-right">
+        <p class="student-detail"><strong>Titulación:</strong> {{ estudiante.titulacion }}</p>
+  
+        <!-- Mostrar detalles del TFG solo si hay información del TFG -->
+        <div *ngIf="tfgData[estudiante.id_estudiante]">
+          <p class="student-detail"><strong>Título TFG:</strong> {{ tfgData[estudiante.id_estudiante]?.titulo || 'Título no disponible' }}</p>
+          <p class="student-detail"><strong>Estado TFG:</strong> {{ tfgData[estudiante.id_estudiante]?.tfg_estado || 'Estado no disponible' }}</p>
+          <p class="student-detail">
+            <strong>Email:</strong> {{ convertirNombreAGmail(estudiante.nombre) }}
+          </p>
+          
+        </div>
+
+        <!-- Notificación de mensajes no leídos -->
+        <div *ngIf="unreadMessages[estudiante.id_estudiante]" class="unread-indicator">
+          <span class="notification-dot"></span> Mensajes no leídos
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+  <!-- Plantilla de carga -->
+  <ng-template #loading>
+    <p class="error">No se encontraron datos para mostrar.</p>
+  </ng-template>
+
+  <!-- Iconos de navegación -->
+  <div class="icon-container">
+    <img src="assets/icon1.png" alt="Ícono 1" class="icon icon1" routerLink="/matches"/>
+    <img src="assets/icon2-A.png" alt="Ícono 2" class="icon icon2" />
+    <img src="assets/icon3.png" alt="Ícono 3" class="icon icon3" routerLink="/perfil-prof" />
+  </div>
+</ion-content>

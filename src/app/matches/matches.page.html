@@ -1,0 +1,48 @@
+<ion-content class="ion-padding" id="content">
+  <!-- Título -->
+  <h1 class="page-title">Matches</h1>
+
+  <!-- Contenedor scrollable -->
+  <div class="scrollable-container">
+    <!-- Mostrar los matches si existen -->
+    <ng-container *ngIf="matches.length > 0; else noMatches">
+      <!-- Tarjetas de estudiantes -->
+      <div *ngFor="let match of matches" class="student-card" id="studentCard">
+        <div class="student-left">
+          <!-- Foto de perfil -->
+          <img src="assets/sample-image1.png" alt="Foto de perfil" class="profile-picture" />
+          <!-- Nombre del estudiante -->
+          <h3 class="student-name">
+            {{ estudiantes[match.id_estudiante]?.nombre || 'Nombre no disponible' }}
+          </h3>
+        </div>
+        <div class="student-right">
+          <!-- Detalles del estudiante -->
+          <p class="student-detail"><strong>Titulación:</strong> {{ estudiantes[match.id_estudiante]?.titulacion || 'No disponible' }}</p>
+          <p class="student-detail"><strong>TFG:</strong> {{ match.titulo || 'Título no disponible' }}</p>
+          <p class="student-detail"><strong>Email:</strong> {{ getEmailEstudiante(match.id_estudiante) }}</p>
+
+          <!-- Contenedor de botones -->
+          <div class="button-container">
+            <ion-button class="accept-button" (click)="aceptarMatch(match.id_estudiante, match.id_tfg)">Aceptar</ion-button>
+            <ion-button class="reject-button" (click)="rechazarMatch(match.id_estudiante, match.id_tfg)">Rechazar</ion-button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Mostrar mensaje si no hay matches -->
+  <ng-template #noMatches>
+    <div class="no-matches-container">
+      <p>No hay matches disponibles.</p>
+    </div>
+  </ng-template>
+
+  <!-- Contenedor de íconos -->
+  <div class="icon-container">
+    <img src="assets/icon1-A.png" alt="Ícono 1" class="icon icon1" />
+    <img src="assets/icon2.png" alt="Ícono 2" class="icon icon2" routerLink="/msg-prof" />
+    <img src="assets/icon3.png" alt="Ícono 3" class="icon icon3" routerLink="/perfil-prof"/>
+  </div>
+</ion-content>

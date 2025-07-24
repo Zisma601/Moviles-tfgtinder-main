@@ -1,0 +1,124 @@
+/* Estilos globales */
+.login-container {
+  position: relative;
+  height: 100%;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 52px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Texto "TFTINDER" */
+.tftinder-text {
+  position: absolute;
+  top: 215px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px;
+  color: #000000;
+  text-align: center;
+}
+
+/* Texto "Login" */
+.login-text {
+  position: absolute;
+  top: 329px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px;
+  color: #000000;
+  text-align: center;
+}
+
+/* Campo de Nombre */
+.email-input {
+  position: absolute;
+  top: 400px; /* Posición ajustada */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 296px; /* Ancho igual al botón */
+}
+
+/* Campo de Contraseña */
+.password-input {
+  position: absolute;
+  top: 497px; /* Posición ajustada */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 296px; /* Ancho igual al botón */
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #E0E0E0;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  padding: 8px 0;
+  color: #333;
+}
+
+/* Placeholder Styles */
+.input-field::placeholder {
+  color: #9E9E9E; /* Color del placeholder cuando no está enfocado */
+  transition: color 0.2s ease; /* Efecto suave */
+}
+
+/* Ocultar placeholder cuando el input está enfocado */
+.input-field:focus::placeholder {
+  color: transparent;
+}
+
+/* Cambiar borde cuando el input está enfocado */
+.input-field:focus {
+  border-bottom: 1px solid #333;
+}
+
+/* Enlace "He olvidado mi contraseña" */
+.forgot-password {
+  position: absolute;
+  top: 621px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Botón de inicio de sesión */
+.login-button::part(native) {
+  position: absolute;
+  top: 796px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 296px;
+  height: 49px;
+  border-radius: 25px;
+  background: linear-gradient(to right, #EA4080, #EE805F);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: none;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}

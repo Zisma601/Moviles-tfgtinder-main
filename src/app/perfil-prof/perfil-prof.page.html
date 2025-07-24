@@ -1,0 +1,45 @@
+<ion-content class="custom-scroll">
+  <!-- Título de la página -->
+  <div class="title-container">
+    <h1 class="page-title">Perfil</h1>
+  </div>
+
+  <!-- Imagen de perfil -->
+  <div class="profile-container">
+    <img src="assets/sample-image.png" alt="Perfil" class="profile-img">
+    <div class="edit-button">
+      <img src="assets/lapiz-edit.png" alt="Editar perfil" class="edit-icon" (click)="openEditProfileModal()">
+    </div>
+  </div>
+
+  <!-- Nombre del usuario -->
+  <h2 class="user-name">{{ nombreTutor }}</h2>
+
+  <!-- Contenedor con scroll para las tarjetas -->
+  <div class="tfg-scroll-container">
+    <div class="tfg-container">
+      <ion-card *ngFor="let card of cards; let i = index" class="tfg-card">
+        <div class="status-circle" [ngClass]="getStatusClass(card)"></div>
+        <ion-card-header>
+          <ion-card-title>{{ card.titulo }}</ion-card-title>
+          <ion-card-subtitle>{{ card.descripcion }}</ion-card-subtitle>
+        </ion-card-header>
+        <div class="rating-box">
+          <img src="assets/lapiz-edit.png" alt="Editar TFG" class="edit-icon" (click)="openEditModal(card, i)">
+        </div>
+      </ion-card>
+    </div>
+      <!-- Botón Añadir TFG -->
+  <div class="add-button">
+    <img src="assets/circulo.png" alt="Añadir TFG" class="add-button-icon" (click)="openAddModal()">
+  </div>
+
+  </div>
+
+  <!-- Contenedor de íconos -->
+  <div class="icon-container">
+    <img src="assets/icon1.png" alt="Ícono 1" class="icon icon1" routerLink="/matches" />
+    <img src="assets/icon2.png" alt="Ícono 2" class="icon icon2" routerLink="/msg-prof" />
+    <img src="assets/icon3-A.png" alt="Ícono 3" class="icon icon3" />
+  </div>
+</ion-content>

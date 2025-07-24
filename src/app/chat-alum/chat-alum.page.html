@@ -1,0 +1,46 @@
+<div class="chat-container">
+  <div class="header">
+    <ion-icon name="arrow-back" class="back-icon" routerLink="/msg-alumno"></ion-icon>
+    <img src="assets/sample-image.png" alt="Tutor" class="profile-image" />
+    <div class="header-details">
+      <div class="contact-name">{{ tutorName }}</div>
+      <div class="contact-date">{{ startDate }} - {{ endDate ? endDate : 'Sin definir'  }}</div>
+    </div>
+    <div class="rating-box">
+      {{ notaEstudiante || 'Sin nota' }}
+    </div>
+  </div>
+
+  <div class="messages">
+    <div
+      *ngFor="let message of messages$ | async"
+      [ngClass]="{
+        sent: message.sender_type === 'estudiante',
+        received: message.sender_type === 'tutor'
+      }"
+      class="message"
+    >
+      <div class="message-content">{{ message.message }}</div>
+      <div class="message-details">
+        <div class="message-time">{{ message.timestamp | date: 'shortTime' }}  <img
+          *ngIf="message.sender_type === 'estudiante'"
+          [src]="message.read ? 'assets/check-A.png' : 'assets/check.png'"
+          alt="Estado de lectura"
+          class="status-icon"
+        /></div>
+        <!-- Mostrar ícono dependiendo del estado del mensaje -->
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="message-input">
+    <input
+      type="text"
+      [(ngModel)]="newMessage"
+      placeholder="Escribe un mensaje"
+      class="input-field"
+    />
+    <ion-icon name="send" class="send-icon" (click)="sendMessage()"></ion-icon>
+  </div>
+</div>

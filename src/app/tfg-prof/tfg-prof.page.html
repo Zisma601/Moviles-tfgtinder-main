@@ -1,0 +1,33 @@
+<ion-content class="custom-scroll">
+  <!-- Título fijo -->
+  <div class="title-container">
+    <h1 class="page-title">TFG</h1>
+  </div>
+
+  <!-- Contenedor desplazable -->
+  <div class="scrollable-content">
+    <!-- Contenedor de las tarjetas -->
+    <div class="tfg-container">
+      <!-- Tarjetas dinámicas -->
+      <ion-card class="tfg-card" *ngFor="let card of cards; let i = index">
+        <ion-card-header>
+          <ion-card-title>{{ card.titulo }}</ion-card-title>
+          <ion-card-subtitle>{{ card.descripcion }}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-button fill="clear" size="small" class="edit-button" (click)="openEditModal(card, i)">
+          <img src="assets/lapiz-edit.png" alt="Editar" class="edit-icon">
+        </ion-button>
+      </ion-card>
+
+      <!-- Imagen de botón circular -->
+      <div class="add-button">
+        <img src="assets/circulo.png" alt="Añadir TFG" class="add-button-icon" (click)="openAddModal()">
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón Confirmar -->
+  <ion-button expand="block" class="confirm-button" color="gradient" routerLink="/matches" >
+    Confirmar
+  </ion-button>
+</ion-content>

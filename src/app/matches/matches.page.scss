@@ -1,0 +1,180 @@
+/* Contenedor principal (ion-content) */
+ion-content {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+}
+.scrollable-container {
+    max-height: calc(100vh - 180px); /* Ajusta la altura según el título y la barra inferior */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    padding: 8px 0; /* Espaciado adicional arriba y abajo */
+    box-sizing: border-box; /* Incluye padding en el cálculo */
+}
+
+/* Título con posición específica */
+.page-title {
+    position: relative; /* Cambia absolute a relative */
+    margin: 0; /* Elimina márgenes */
+    padding: 16px 0; /* Añade espacio si es necesario */
+    left:15px;
+    font-size: 38px;
+    font-weight: 550;
+    color: black;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Contenedor de la tarjeta */
+.student-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    background-color: #ffffff;
+    margin: 16px auto 0;
+    max-width: 400px;
+    border-bottom: 1px solid #F3F2F6;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+}
+/*    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    background-color: #ffffff;
+    margin: 80px auto 0;
+    max-width: 400px;
+    border-bottom: 1px solid #F3F2F6;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;*/
+/* Contenedor izquierdo (imagen + nombre) */
+.student-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Alinear verticalmente */
+    margin-right: 16px;
+    flex-shrink: 0; /* Evita que la imagen se reduzca demasiado */
+}
+
+/* Imagen del perfil */
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eee;
+    margin-bottom: 8px;
+}
+
+/* Nombre del estudiante */
+.student-name {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #484648;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    display: inline-block;
+    max-width: 80px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+   }
+
+/* Contenedor derecho (texto + botones) */
+.student-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinear verticalmente */
+    align-items: flex-start;
+    flex: 1; /* Ocupa el espacio restante */
+}
+.no-matches-container {
+    font-size: 20px;
+    font-weight: bold;
+    color: #484648;
+    font-family: 'Inter', sans-serif;
+    margin-top: 16px;
+    align-items: center;
+    align-self: center;
+    text-align: center ;
+    margin-top: 400px;
+  }
+
+/* Detalles del estudiante */
+.student-detail {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #828693;
+}
+
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    justify-content: flex-start; /* Alinear botones con el texto */
+    align-items: center;
+    gap: 16px; /* Espacio entre los botones */
+    margin-top: 8px; /* Espaciado adicional con el texto */
+    width: 100%; /* Asegurar que ocupen todo el ancho */
+}
+
+/* Botón Aceptar */
+.accept-button::part(native) {
+    background: linear-gradient(to right, #EA4080, #EE805F); /* Gradiente del botón */
+    color: white;
+    font-weight: bold;
+    border-radius: 20px; /* Bordes redondeados */
+    width: 111px; /* Ancho fijo */
+    height: 51px; /* Altura fija */
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Botón Rechazar */
+.reject-button::part(native) {
+    background: linear-gradient(to right, #EA4080, #EE805F); /* Gradiente del botón */
+    color: white;
+    font-weight: bold;
+    border-radius: 20px; /* Bordes redondeados */
+    width: 111px; /* Ancho fijo */
+    height: 51px; /* Altura fija */
+    font-size: 16px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Contenedor de íconos fijo en la parte inferior */
+.icon-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 105px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilo de cada ícono */
+.icon-container .icon {
+    display: block;
+    cursor: pointer;
+}
+
+.icon1 {
+    width: 22.57px;
+    height: 26.87px;
+    margin-right: 50px;
+}
+
+.icon2 {
+    width: 30.9px;
+    height: 26.84px;
+    margin: 0 50px;
+}
+
+.icon3 {
+    width: 19.46px;
+    height: 26.03px;
+    margin-left: 50px;
+}

@@ -1,0 +1,37 @@
+<ion-content class="ion-padding" id="content">
+  <!-- Título -->
+  <h1 class="page-title">Mensajes</h1>
+  
+  <!-- Tarjeta del estudiante -->
+  <div *ngIf="tfg$ | async as tfg" class="student-card" id="studentCard" routerLink="/chat-alum">
+    <div class="student-left">
+      <img src="assets/sample-image.png" alt="Foto de perfil" class="profile-picture" />
+      <h3 class="student-name" *ngIf="tutor$ | async as tutor">{{ tutor.nombre }}</h3>
+    </div>
+    <div class="student-right">
+      <p class="student-detail"><strong>Titulación:</strong> {{ tfg.titulacion || 'Desconocida' }}</p>
+      <p class="student-detail"><strong>TFG:</strong> {{ tfg.titulo }}</p>
+      <p class="student-detail"><strong>Estado TFG:</strong> {{ tfg.tfg_estado }}</p>
+      <p class="student-detail" *ngIf="tutor$ | async as tutor">
+        <strong>Email:</strong> {{ generateEmail(tutor.nombre) }}
+      </p>
+
+      <!-- Notificación de mensajes no leídos -->
+      <div *ngIf="hasUnreadMessages" class="unread-indicator">
+        <span class="notification-dot"></span> Mensajes no leídos
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de íconos -->
+  <div class="icon-container">
+    <img src="assets/icon1.png" alt="Ícono 1" class="icon icon1" routerLink="/descubre-alum"/>
+    <img src="assets/icon2-A.png" alt="Ícono 2" class="icon icon2" />
+    <img src="assets/icon3.png" alt="Ícono 3" class="icon icon3" routerLink="/perfil-alum"/>
+  </div>
+
+  <!-- Mensaje si no hay datos -->
+  <div *ngIf="!(tfg$ | async)" class="error">
+    <p>No se encontraron datos para mostrar.</p>
+  </div>
+</ion-content>

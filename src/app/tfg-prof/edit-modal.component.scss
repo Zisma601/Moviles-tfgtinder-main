@@ -1,0 +1,292 @@
+/* Estilo general del ion-content */
+ion-content {
+  position: relative;
+  background: rgba(217, 217, 217, 0.3); /* Fondo translÃºcido */
+  border-radius: 16px; /* Bordes redondeados */
+  padding: 16px; /* Espaciado interno */
+  font-family: 'Inter', sans-serif; /* Fuente consistente */
+}
+
+/* TÃ­tulos */
+ion-header ion-toolbar ion-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #484648; /* Color oscuro */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Cajas de texto */
+ion-item {
+  background: white; /* Fondo blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 16px; /* Espaciado entre cajas */
+  --highlight-height: 0; /* Elimina la lÃ­nea de resaltado */
+  --min-height: 56px; /* Altura mÃ­nima uniforme */
+}
+
+ion-label {
+  font-size: 14px;
+  color: #828693; /* Color gris oscuro */
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+}
+
+ion-input,
+ion-textarea {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #484648; /* Texto oscuro */
+}
+
+/* Botones generales */
+ion-button {
+  --border-radius: 25px; /* Bordes redondeados */
+  --box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  --padding-start: 16px;
+  --padding-end: 16px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: none;
+}
+
+/* BotÃ³n "Guardar" */
+ion-button[color="primary"]::part(native) {
+  background: linear-gradient(to right, #EA4080, #EE805F) !important;
+  color: white !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* BotÃ³n "Cancelar" */
+ion-button[color="light"]::part(native) {
+  background: #FFFFFF !important;
+  color: #EE805F !important;
+  border: 2px solid #EE805F !important;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* BotÃ³n "Eliminar" */
+ion-button[color="danger"]::part(native) {
+  background: #FF4D4F !important;
+  color: white !important;
+}
+
+/* Deja el tÃ­tulo del modal (Editar TFG) como antes */
+ion-header ion-toolbar ion-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #484648; /* Color oscuro */
+  font-family: 'Inter', sans-serif;
+}
+
+/* Ajuste de los cuadrados de texto */
+ion-item {
+  background: #f3f3f3; /* Fondo gris claro */
+  border-radius: 12px; /* Bordes ligeramente redondeados */
+  margin-bottom: 12px; /* Espaciado entre las cajas */
+  --highlight-height: 0; /* Elimina la lÃ­nea de resaltado */
+  --min-height: 40px; /* Altura mÃ¡s pequeÃ±a */
+  padding: 6px 10px; /* Espaciado interno mÃ¡s reducido */
+}
+
+/* Estilo para las etiquetas */
+ion-label {
+  font-size: 13px;
+  color: #828693; /* Color gris oscuro */
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 4px; /* SeparaciÃ³n del input */
+}
+
+/* Estilo para el contenido dentro de las cajas */
+ion-input,
+ion-textarea {
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: #484648; /* Texto oscuro */
+  background: transparent; /* Fondo transparente */
+  margin-top: 4px; /* SeparaciÃ³n interna */
+}
+/* Aplica estilo al botÃ³n con texto "Guardar" */
+ion-button[color="primary"]::part(native),
+ion-button:has-text('Guardar')::part(native) {
+  background: linear-gradient(to right, #EA4080, #EE805F) !important; /* Gradiente rosa a naranja */
+  color: white !important; /* Texto blanco */
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  border-radius: 25px !important; /* Bordes redondeados */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2) !important; /* Sombra ligera */
+  padding: 10px 20px !important; /* Espaciado interno */
+}
+
+/* Efecto al pasar el cursor */
+ion-button[color="primary"]::part(native):hover,
+ion-button:has-text('Guardar')::part(native):hover {
+  transform: scale(1.05) !important; /* Ligeramente mÃ¡s grande */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3) !important; /* Sombra mÃ¡s fuerte */
+}
+
+/* Estilo del tÃ­tulo (mÃ¡s grande) */
+ion-header ion-toolbar ion-title {
+  font-size: 24px; /* Incrementar tamaÃ±o del tÃ­tulo */
+  font-weight: bold;
+  text-align: center;
+  color: #484648; /* Color oscuro */
+  font-family: 'Inter', sans-serif;
+  
+}
+
+/* Espaciado general: desplaza todo hacia abajo */
+ion-content {
+  margin-top: 20px; /* Desplaza hacia abajo */
+}
+
+
+/* Ajuste del tÃ­tulo (mÃ¡s grande y centrado) */
+ion-header ion-toolbar ion-title {
+  font-size: 28px; /* TamaÃ±o mÃ¡s grande */
+  font-weight: bold;
+  text-align: center;
+  color: #484648; /* Color oscuro */
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 16px; /* Espaciado debajo del tÃ­tulo */
+  
+}
+
+/* Ajuste del botÃ³n de cerrar (X en la esquina) */
+ion-header ion-toolbar ion-buttons ion-button {
+  font-size: 20px; /* TamaÃ±o de la X */
+  font-weight: bold;
+  color: #5f5a58; /* Color de la X */
+  --padding-start: 0;
+  --padding-end: 0;
+  position: absolute;
+  top: 8px; /* Perfectamente alineada en la esquina */
+  right: 8px;
+  width: 32px; /* TamaÃ±o fijo para el botÃ³n */
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-header ion-toolbar ion-buttons ion-button::after {
+  content: '✕'; /* Usa una X estilizada */
+  font-size: 24px; /* TamaÃ±o ajustado */
+  font-weight: 300; /* MÃ¡s delgada */
+  color: #5a5857; /* Color de la X */
+}
+
+
+/* Ajuste del tÃ­tulo (espaciado uniforme y mÃ¡s abajo) */
+ion-header ion-toolbar ion-title {
+  font-size: 35px; /* TamaÃ±o del tÃ­tulo */
+  font-weight: bold;
+  text-align: center;
+  color: #484648; /* Color oscuro */
+  font-family: 'Inter', sans-serif;
+  margin-top: 25px; /* Espaciado desde la parte superior */
+  margin-bottom: 25px; /* Espaciado desde la parte inferior */
+  line-height: 1.2; /* Ajuste de altura de lÃ­nea */
+}
+
+/* BotÃ³n "X" alineado con el tÃ­tulo */
+ion-header ion-toolbar ion-buttons ion-button {
+  font-size: 20px; /* TamaÃ±o de la X */
+  font-weight: bold;
+  color: #EE805F; /* Color de la X */
+  --padding-start: 0;
+  --padding-end: 0;
+  position: absolute;
+  top: 50%; /* Centrado verticalmente */
+  transform: translateY(-50%); /* Ajuste para que estÃ© exactamente alineado con el tÃ­tulo */
+  right: 8px; /* Alineado a la derecha */
+  width: 32px; /* TamaÃ±o fijo del botÃ³n */
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ion-header ion-toolbar ion-buttons ion-button::after {
+  content: '✕'; /* Usa una X estilizada */
+  font-size: 24px; /* TamaÃ±o ajustado */
+  font-weight: 300; /* MÃ¡s delgada */
+  color: #636261; /* Color de la X */
+}
+
+/* Ajuste de los rectÃ¡ngulos (inputs) */
+ion-item {
+  background: #f3f3f3; /* Fondo gris claro */
+  border-radius: 16px; /* Bordes redondeados */
+  margin-bottom: 24px; /* Mayor espaciado entre los rectÃ¡ngulos */
+  --highlight-height: 0; /* Elimina la lÃ­nea de resaltado */
+  --min-height: 100px; /* Aumenta la altura mÃ­nima */
+  padding: 20px 24px; /* Espaciado interno mÃ¡s amplio */
+}
+
+/* Hacer las etiquetas mÃ¡s grandes */
+ion-label {
+  font-size: 28px !important; /* Incrementa el tamaÃ±o de las letras */
+  color: #000000; /* Asegura que el color sea negro */
+  font-weight: bold; /* Aumenta el grosor para destacar */
+  font-family: 'Roboto', sans-serif; /* Aplica la misma fuente */
+  margin-bottom: 10px; /* Espaciado entre la etiqueta y el campo */
+}
+
+/* Contenido dentro de los rectÃ¡ngulos */
+ion-input,
+ion-textarea {
+  font-size: 18px; /* TamaÃ±o de letra mÃ¡s grande */
+  font-family: 'Inter', sans-serif;
+  color: #484648; /* Texto oscuro */
+  margin-top: 8px; /* SeparaciÃ³n interna */
+  line-height: 1.5; /* Mejora la legibilidad */
+}
+
+/* Ajuste del espaciado general */
+ion-content {
+  padding: 24px; /* Espaciado alrededor del contenido */
+  margin-top: 20px; /* Desplaza todo el contenido hacia abajo */
+}
+
+/* Botones con una pequeÃ±a separaciÃ³n entre ellos */
+ion-button {
+  margin-bottom: 8px; /* PequeÃ±a separaciÃ³n entre los botones */
+  display: block;
+}
+
+/* BotÃ³n "Eliminar" */
+ion-button[color="danger"]::part(native) {
+  background: #FF6B6B; /* Rojo suave */
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px; /* TamaÃ±o cÃ³modo del botÃ³n */
+}
+
+/* BotÃ³n "Guardar" */
+ion-button[color="primary"]::part(native) {
+  background: linear-gradient(to right, #EA4080, #EE805F); /* Gradiente rosa-naranja */
+  color: white;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px; /* TamaÃ±o cÃ³modo del botÃ³n */
+}
+
+/* SeparaciÃ³n adicional entre botones y los inputs */
+ion-item:last-of-type {
+  margin-bottom: 40px; /* MÃ¡s espacio debajo del Ãºltimo rectÃ¡ngulo */
+}
+/* Estilo para la imagen de cerrar */
+.close-icon {
+  font-size: 40px; /* Tamaño del ícono */
+  color: #7D848F; /* Color del ícono */
+  cursor: pointer; /* Indica que es clicable */
+  position: absolute;
+  right: 8px; /* Alineación derecha */
+}

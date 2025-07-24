@@ -1,0 +1,125 @@
+<ion-content class="custom-scroll">
+  <!-- Título fijo -->
+  <div class="title-container">
+    <h1 class="page-title">Descubre</h1>
+  </div>
+
+  <!-- Contenido dinámico según el estado del alumno -->
+  <div class="scrollable-content">
+    <!-- Mensaje para alumno con TFG asignado -->
+    <div *ngIf="tieneTfgAsignado" class="tfg-asignado-message">
+      <p>Ya tienes un TFG asignado.</p>
+    </div>
+
+    <!-- Cartas para alumnos sin TFG asignado -->
+    <div *ngIf="!tieneTfgAsignado" class="cards-container">
+      <!-- Carta inferior (next) -->
+      <div
+        class="card next-card"
+        *ngIf="nextProfesorName"
+        [style.opacity]="nextCardOpacity"
+        [style.transform]="nextCardTransform"
+      >
+        <div class="image-container">
+          <img
+            [src]="nextProfesorImage"
+            alt="Imagen del siguiente profesor"
+            class="overlay-image"
+          />
+          <div class="image-overlay-text">
+            {{ nextProfesorName }}
+          </div>
+        </div>
+        <div class="tfg-container">
+          <ion-card
+            class="tfg-card"
+            *ngFor="let tfg of nextTfgs; trackBy: trackById"
+          >
+            <ion-card-header>
+              <ion-card-title>{{ tfg.titulo }}</ion-card-title>
+              <ion-card-subtitle>{{ tfg.descripcion }}</ion-card-subtitle>
+            </ion-card-header>
+            <div class="corazon-container">
+              <ion-button
+                fill="clear"
+                size="small"
+                class="corazon-button"
+                (click)="toggleCorazon(tfg)"
+              >
+                <img
+                  [src]="likedTfgs[tfg.id_tfg] ? 'assets/corazon-like.png' : 'assets/corazon.png'"
+                  alt="Corazón"
+                  class="corazon-icon"
+                />
+              </ion-button>
+            </div>
+          </ion-card>
+        </div>
+      </div>
+
+      <!-- Carta superior (current) -->
+      <div
+        class="card current-card"
+        (touchstart)="onTouchStart($event)"
+        (touchmove)="onTouchMove($event)"
+        (touchend)="onTouchEnd()"
+        [style.transform]="cardTransform"
+        [style.transition]="cardTransition"
+        *ngIf="currentProfesorName"
+      >
+        <div class="image-container">
+          <img
+            [src]="currentProfesorImage"
+            alt="Imagen del profesor actual"
+            class="overlay-image"
+          />
+          <div class="image-overlay-text">
+            {{ currentProfesorName }}
+          </div>
+        </div>
+        <div class="tfg-container">
+          <ion-card
+            class="tfg-card"
+            *ngFor="let tfg of tfgs; trackBy: trackById"
+          >
+            <ion-card-header>
+              <ion-card-title>{{ tfg.titulo }}</ion-card-title>
+              <ion-card-subtitle>{{ tfg.descripcion }}</ion-card-subtitle>
+            </ion-card-header>
+            <div class="corazon-container">
+              <ion-button
+                fill="clear"
+                size="small"
+                class="corazon-button"
+                (click)="toggleCorazon(tfg)"
+              >
+                <img
+                  [src]="likedTfgs[tfg.id_tfg] ? 'assets/corazon-like.png' : 'assets/corazon.png'"
+                  alt="Corazón"
+                  class="corazon-icon"
+                />
+              </ion-button>
+            </div>
+          </ion-card>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de íconos -->
+  <div class="icon-container">
+    <img src="assets/icon1-A.png" alt="Ícono 1" class="icon icon1" />
+    <img
+      src="assets/icon2.png"
+      alt="Ícono 2"
+      class="icon icon2"
+      routerLink="/msg-alumno"
+    />
+    <img
+      src="assets/icon3.png"
+      alt="Ícono 3"
+      class="icon icon3"
+      routerLink="/perfil-alum"
+    />
+  </div>
+</ion-content>

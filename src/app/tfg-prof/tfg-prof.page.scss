@@ -1,0 +1,143 @@
+/* Contenedor principal (ion-content) */
+.custom-scroll {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda la pantalla */
+    overflow: hidden; /* Evita el scroll del contenedor principal */
+    background-color: white; /* Fondo blanco */
+  }
+  
+  /* Título fijo completamente blanco */
+  .title-container {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: white; /* Fondo blanco */
+    padding: 16px 0; /* Espaciado interno */
+  }
+  
+  .page-title {
+    font-size: 38px;
+    font-weight: bold;
+    color: black;
+    margin: 0;
+    position: relative;
+    left: 15px;
+    top:15px;
+    padding-left: 16px; /* Espaciado izquierdo */
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Contenedor desplazable */
+  .scrollable-content {
+    flex: 1;
+    overflow-y: auto; /* Permite scroll solo dentro de este contenedor */
+    padding: 0 16px;
+    box-sizing: border-box;
+    max-height: calc(100vh - 105px - 135px); /* Calcula la altura restante después del título y los íconos */
+    overflow-x: hidden; /* Evita scroll horizontal */
+  }
+  
+  
+ 
+  /* Contenedor de TFG */
+  .tfg-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative; /* Necesario para que la imagen se posicione relativo al contenedor */
+    align-items: center; /* Centrar elementos hijos horizontalmente */
+    margin-top: 10px; /* Espaciado desde la parte superior */
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye padding y borde */
+  }
+  
+  /* Tarjeta de TFG (Sin sombra ni bordes redondeados) */
+  .tfg-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    background: rgba(217, 217, 217, 0.3); /* Fondo con opacidad */
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: none; /* Sin sombra */
+    border: none; /* Sin borde */
+    max-width: 372px;
+    min-width: 372px;
+    padding-right: 70px;
+  }
+  
+  /* Título de la tarjeta */
+  .tfg-card ion-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #484648;
+    font-family: 'Inter', sans-serif;
+    word-wrap: break-word;
+    text-align: justify;
+  }
+  
+  /* Subtítulo de la tarjeta */
+  .tfg-card ion-card-subtitle {
+    font-size: 14px;
+    color: #828693;
+    font-family: 'Inter', sans-serif;
+    font-weight: 550;
+    max-width: 100%;
+    text-align: justify;
+    word-wrap: break-word;
+  }
+  
+  /* Contenedor de la imagen circular (Botón) */
+  .add-button {
+    width: 31px;
+    height: 31px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+  
+  /* Imagen circular */
+  .add-button-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  /* Botón Confirmar */
+  .confirm-button::part(native) {
+    position: fixed; /* Botón fijo */
+    top: 830px; /* Ajusta la posición vertical */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra completamente el botón */
+    width: 296px;
+    height: 49px;
+    border-radius: 25px;
+    background: linear-gradient(to right, #EA4080, #EE805F);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: none;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', sans-serif;
+    z-index: 10; /* Asegura que el botón esté debajo del contenedor de abajo */
+  }
+  .edit-button {
+    position: absolute;
+    top:35px; 
+    right: 16px; 
+    width: 60px; 
+    height: 60px;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+   font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #484648; 
+   }

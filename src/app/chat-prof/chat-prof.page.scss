@@ -1,0 +1,142 @@
+.chat-container {
+    width: 100%;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .back-icon {
+    font-size: 24px;
+    color: #828693;
+    margin-right: 15px;
+  }
+  
+  .profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+  
+  .header-details {
+    flex-grow: 1;
+  }
+  
+  .contact-name {
+    font-size: 19px;
+    font-weight: 600;
+    color: #484648;
+  }
+  
+  .contact-date {
+    font-size: 16px;
+    font-weight: 200;
+    color: #484648;
+  }
+  
+  .rating-box {
+    width: 65px;
+    height: 60px;
+    background: #d9d9d9;
+    text-align: center;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #484648;
+    
+  }
+  
+  .messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .message {
+    max-width: 70%;
+    border-radius: 32px;
+    padding: 12px;
+  }
+  
+  .sent {
+    background: linear-gradient(180deg, #EE805F 0%, #EA4080 100%);
+    color: white;
+    align-self: flex-end;
+    border-radius: 32px 32px 0 32px;
+  }
+  
+  .received {
+    background: rgba(217, 217, 217, 0.3);
+    color: #484648;
+    align-self: flex-start;
+    border-radius: 32px 32px 32px 0;
+  }
+  
+  .message-time {
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 8px;
+    text-align: right;
+  }
+  
+  .message-input {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    color: #7d848f;
+  }
+  
+  .input-field {
+    flex-grow: 1;
+    border: none;
+    font-size: 18px;
+    padding: 10px;
+    outline: none;
+    background-color: white;
+  }
+  
+  .send-icon {
+    font-size: 24px;
+    color: #7d848f;
+    margin-left: 15px;
+  }
+  
+  .footer-icons {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .footer-icon {
+    width: 25px;
+    height: 25px;
+  }
+  .rating-box {
+    position: absolute;
+    top:20px; /* Ajusta la posición en la tarjeta */
+    right: 16px; /* Posición del cuadrado */
+    width: 60px; /* Dimensiones del cuadrado */
+    height: 60px;
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    background-color: #D9D9D9; /* Color de fondo */
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    color: #484648; /* Color del texto */
+  }

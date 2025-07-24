@@ -1,0 +1,26 @@
+<ion-content class="login-container">
+  <img src="assets/logo.png" alt="Logo" class="logo" />
+  <h1 class="tftinder-text">TFTINDER</h1>
+  <h2 class="login-text">Login</h2>
+
+  <!-- Formulario de login -->
+  <form (ngSubmit)="login()">
+    <!-- Campo de Nombre -->
+    <div class="input-container email-input">
+      <label for="nombre" class="floating-label">Nombre</label>
+      <ion-input id="nombre" type="text" [(ngModel)]="nombre" name="nombre" class="input-field" required></ion-input>
+    </div>
+
+    <!-- Campo de Contraseña -->
+    <div class="input-container password-input">
+      <label for="password" class="floating-label">Contraseña</label>
+      <ion-input id="password" type="password" [(ngModel)]="password" name="password" class="input-field" required></ion-input>
+    </div>
+
+    <ion-text class="forgot-password">
+      <a href="#">He olvidado mi contraseña</a>
+    </ion-text>
+
+    <ion-button type="submit" expand="block" class="login-button">Entrar</ion-button>
+  </form>
+</ion-content>

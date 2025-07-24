@@ -1,0 +1,58 @@
+<ion-content class="ion-padding">
+  <!-- Título de la página -->
+  <h1 class="page-title">Perfil</h1>
+
+  <!-- Imagen de perfil con botón flotante -->
+  <div class="profile-container">
+    <img src="assets/sample-image1.png" alt="Perfil" class="profile-img" />
+    <div class="edit-button">
+      <img src="assets/lapiz-edit.png" alt="Editar perfil" class="edit-icon" />
+    </div>
+  </div>
+
+  <!-- Nombre del usuario -->
+  <h2 class="user-name" *ngIf="estudiante$ | async as estudiante">
+    {{ estudiante.nombre }}
+  </h2>
+
+
+
+  <!-- Contenedor de TFG -->
+  <div class="tfg-container" *ngIf="tfgs$ | async as tfgs; else noTfgs">
+    <div *ngFor="let tfg of tfgs">
+      <!-- Tarjeta -->
+      <div class="tfg-card">
+        <ion-card-header>
+          <ion-card-title>{{ tfg.titulo }}</ion-card-title>
+          <ion-card-subtitle>{{ tfg.descripcion || 'Sin descripción' }}</ion-card-subtitle>
+        </ion-card-header>
+        <div class="rating-box">
+          {{ tfg.nota !== null ? tfg.nota.toFixed(1) : 'Sin nota' }}
+        </div>
+      </div>
+      <!-- Barra de estado debajo de la tarjeta -->
+      <div 
+      class="status-bar" 
+      [ngStyle]="{
+        width: getStatusBarWidth(tfg.tfg_estado)
+      }"
+    >
+</div>
+<p class="status-text">{{ tfg.tfg_estado }}</p>
+    </div>
+  </div>
+
+  <!-- Mensaje en caso de no haber TFGs -->
+   <div >
+  <ng-template #noTfgs >
+    <p class="error">No se encontraron TFGs asignados.</p>
+  </ng-template>
+</div>
+
+  <!-- Contenedor de íconos -->
+  <div class="icon-container">
+    <img src="assets/icon1.png" alt="Ícono 1" class="icon icon1" routerLink="/descubre-alum" />
+    <img src="assets/icon2.png" alt="Ícono 2" class="icon icon2" routerLink="/msg-alumno" />
+    <img src="assets/icon3-A.png" alt="Ícono 3" class="icon icon3" />
+  </div>
+</ion-content>

@@ -1,0 +1,229 @@
+/* Contenedor principal (ion-content) */
+ion-content {
+    position: relative;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 130px; /* Asegura que haya espacio suficiente para el footer */
+}
+
+/* Título con posición específica */
+.page-title {
+    position: absolute;
+    top: 31px;
+    left: 31px;
+    font-size: 38px;
+    font-weight: 550;
+    color: black;
+    margin: 0;
+}
+
+/* Contenedor del botón y desplegable */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 80px auto 20px;
+}
+
+/* Botón Filtrar */
+.filter-button::part(native) {
+    position: relative;
+    display: block;
+    width: 368px;
+    height: 51px;
+    border-radius: 9px;
+    background: linear-gradient(to right, #EA4080, #EE805F);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: none;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Ícono dentro del botón */
+.icon-inside-button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Dropdown menu */
+.dropdown {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 368px;
+    list-style: none;
+    background: linear-gradient(to right, #EA4080, #EE805F);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px 0;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Mostrar el menú desplegable */
+.dropdown.show {
+    opacity: 1;
+    transform: scaleY(1);
+    pointer-events: auto;
+}
+
+/* Estilos de los elementos del dropdown */
+.dropdown-item {
+    padding: 10px 16px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Contenedor de la tarjeta */
+.student-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    background-color: #ffffff;
+    margin: 20px auto;
+    max-width: 400px;
+    border-bottom: 1px solid #F3F2F6;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    font-family: 'Inter', sans-serif;
+
+}
+
+/* Añadir un margen inferior para que no se solape con el footer */
+.student-card:last-of-type {
+    margin-bottom: 140px;
+}
+
+/* Contenedor izquierdo (imagen + nombre) */
+.student-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 16px;
+}
+
+/* Imagen del perfil */
+.profile-picture {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #eee;
+    margin-bottom: 4px; /* Reducir espacio entre la imagen y el contenido */
+}
+
+/* Nombre del estudiante */
+.student-name {
+   margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #484648;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    display: inline-block;
+    max-width: 80px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Contenedor derecho (texto) */
+.student-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+}
+
+/* Detalles del estudiante */
+.student-detail {
+    margin: 2px 0;
+    font-size: 14px;
+    color: #484648;
+    line-height: 1.3;
+}
+
+
+/* Contenedor de íconos fijo en la parte inferior */
+.icon-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 105px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Estilo de cada ícono */
+.icon-container .icon {
+    display: block;
+    cursor: pointer;
+}
+
+.icon1 {
+    width: 22.57px;
+    height: 26.87px;
+    margin-right: 50px;
+}
+
+.icon2 {
+    width: 30.9px;
+    height: 26.84px;
+    margin: 0 50px;
+}
+
+.icon3 {
+    width: 19.46px;
+    height: 26.03px;
+    margin-left: 50px;
+}
+.error {
+    font-size: 20px;
+    font-weight: bold;
+    color: #484648;
+    font-family: 'Inter', sans-serif;
+    margin-top: 16px;
+    align-items: center;
+    align-self: center;
+    text-align: center ;
+    margin-top: 535px;
+}
+.unread-indicator {
+    color: red;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .notification-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+  .scroll-container {
+    max-height: calc(100vh - 220px); /* Ajustar altura: Resta el espacio del título y footer */
+    overflow-y: auto; /* Scroll vertical */
+    padding: 0 16px; /* Espaciado horizontal */
+    box-sizing: border-box; /* Evita que el padding afecte al tamaño */
+}
